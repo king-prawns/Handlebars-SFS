@@ -13,9 +13,11 @@ The Parking windget can communicate with the Web app through the Custom Event.
 2) How can you guarantee that another developer can modify your code without breaking
 the features? How can you guarantee to modify your code during a refactoring without
 breaking any functionality?
+
 For this purpose, I can use unit and e2e test.
 
 3) How do you differentiate desktop and mobile devices?
+
 I can differentiate desktop and mobile devices using media query.
 
 ## Installation
