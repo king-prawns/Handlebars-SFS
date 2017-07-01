@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="../bower_components/web-component-tester/browser.js"></script>
+    <script src="https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents-sd-ce.js"></script>
+    <script src="../static/scripts/parkingWidget.js"></script>
+  </head>
+  <body>
+    <parking-widget id="myParkingWidgetTest"
+        name="appName"
+        airport="myAirport"
+        map="http://lorempixel.com/370/390"
+        features='[
+            "features 1",
+            "features 2",
+            "features 3",
+            "features 4"
+        ]'
+        parkings='[{
+            "id": 1,
+            "indoor": false,
+            "insurance": false,
+            "price": "10.00 EUR"
+        }, {
+            "id": 2,
+            "indoor": false,
+            "insurance": true,
+            "price": "20.00 EUR"
+        }]'
+        dictionary='{
+            "bookYourParking": "dictionary 1",
+            "featuresTitle": "dictionary 2",
+            "indoorSpace": "dictionary 3",
+            "outdoorSpace": "dictionary 4",
+            "insuranceIncluded": "dictionary 5",
+            "insuranceExcluded": "dictionary 6"
+        }'>
+    </parking-widget>
+    <script>
+        suite('<parking-widget>', function() {
+          let component = document.querySelector('parking-widget');
+
+          test('renders div', () => {
+            assert.isOk(component.shadowRoot.querySelector('div'));
+          });
+
+          test('renders all features', () => {
+            assert.equal(component.shadowRoot.querySelectorAll('.vendor-area-features span').length, 4);
+          });
+
+          test('vendor area content is hidden by default', () => {
+            assert.equal(window.getComputedStyle(component.shadowRoot.querySelector('.vendor-area-content')).display, 'none');
+          });
+
+          test('show vendor area content on show details click', () => {
+            let btnShowDetails = component.shadowRoot.querySelector('.vendor-area-btn.show');
+            btnShowDetails.click();
+            assert.equal(window.getComputedStyle(component.shadowRoot.querySelector('.vendor-area-content')).display, 'block');
+          });
+
+          test('renders 2 parkings', () => {
+            assert.equal(component.shadowRoot.querySelectorAll('.parking').length, 2);
+          });
+
+          test('set airport property', () => {
+            assert.equal(component.airport, 'myAirport');
+          });
+
+          test('no parking selected by default', () => {
+            assert.equal(component.currentParkings.length, 0);
+          });
+
+          test('can select 1 parking', () => {
+            let parking = component.shadowRoot.querySelectorAll('.parking')[0];
+            parking.click();
+            assert.equal(component.currentParkings.length, 1);
+          });
+        });
+    </script>
+  </body>
+</html>

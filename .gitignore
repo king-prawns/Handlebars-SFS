@@ -1,0 +1,11 @@
+*.zip
+*.log
+npm-debug.log*
+node_modules
+.npm
+dist
+bower_components
+.idea
+.DS_Store
+src_old
+.vscode

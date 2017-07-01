@@ -1,0 +1,16 @@
+<div class="cart"> 
+    <h2>Parking cart</h2>
+    {{#if parkings }}
+    <span class="cart-info">{{ parkings.length }} parking selected</span>
+    <span class="cart-amount"> TOTAL: {{{ total parkings }}} EUR</span>
+    {{else}}
+    <span class="cart-info">No parking selected</span>
+    {{/if}}
+    <button class="cart-checkout" 
+        {{#if parkings }} 
+        onclick="alert('Go to checkout...')"
+        {{else}}
+        disabled
+        {{/if}}>Checkout
+    </button>
+</div>

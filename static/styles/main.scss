@@ -1,0 +1,7 @@
+@import 'colors';
+@import './src/components/Home/style';
+@import './src/components/Cart/style';
+
+body {
+  background-color: $background;
+}
