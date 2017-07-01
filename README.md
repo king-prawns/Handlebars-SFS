@@ -74,7 +74,7 @@ a) for dev build: [localhost:8000](http://localhost:8000/)
 b) for prod build: [localhost:8080](http://localhost:8080/)
 
 ## Test
-- Install [Web-Component-Tester] https://github.com/Polymer/web-component-tester
+- Install [Web-Component-Tester](https://github.com/Polymer/web-component-tester)
 
 ```
 yarn global add web-component-tester
