@@ -79,6 +79,7 @@ b) for prod build: [localhost:8080](http://localhost:8080/)
 ```
 yarn global add web-component-tester
 
+cd MyWebApp
 bower install --save-dev web-component-tester
 ```
 then launch test
