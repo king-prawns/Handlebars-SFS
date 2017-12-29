@@ -1,7 +1,7 @@
 {
   "name": "my-web-app",
   "version": "1.0.0",
-  "description": "It's my web app",
+  "description": "Simple web app with web components",
   "main": "./src/main.js",
   "scripts": {
     "dev": "node build/dev.js",
