@@ -1,6 +1,6 @@
 # MyWebApp
 
-Simple web app with web components
+Simple web app with handlebars
 
 ## Installation
 
@@ -77,7 +77,3 @@ then launch test
 cd MyWebApp
 yarn test
 ```
-
-## Conclusion
-
-This is just a simple example with Web Components.
